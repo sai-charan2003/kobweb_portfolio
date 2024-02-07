@@ -9,7 +9,7 @@ kotlin-js-store
 /*.ipr
 
 /.idea/caches
-!.kobweb/site
+
 
 /.idea/libraries
 /.idea/modules.xml
