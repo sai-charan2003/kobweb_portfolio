@@ -78,7 +78,7 @@ fun HomePage() {
             )
             Button(
                 onClick = {
-                          ctx.router.navigateTo("https://drive.google.com/file/d/1ewpI1d3f8qO3SNNB6DN9-Jk-IQrMdYK2/view")
+                          ctx.router.navigateTo("https://drive.google.com/file/d/1cevEfQg7ttt5hPyXAzQkxEolP9KJM5s0/view")
 
                 },
                 colorScheme = CustomColorSchemes.BlackAndWhite,

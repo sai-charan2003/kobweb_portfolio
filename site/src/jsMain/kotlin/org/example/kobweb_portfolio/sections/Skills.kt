@@ -219,6 +219,18 @@ fun Skills() {
                         )
                         SpanText("Git",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
                     }
+                    Column {
+                        Image(
+                            src = "/ktor.svg",
+                            modifier = Modifier.size(42.px)
+                                .styleModifier {
+                                    mixBlendMode(MixBlendMode.Normal)
+                                }
+                                .margin(10.px)
+                                .align(Alignment.CenterHorizontally)
+                        )
+                        SpanText("Ktor",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
+                    }
 
 
                     }

@@ -38,14 +38,11 @@ import org.example.kobweb_portfolio.HeadlineTextStyle
 import org.example.kobweb_portfolio.SubheadlineTextStyle
 import org.example.kobweb_portfolio.components.layouts.PageLayout
 import org.example.kobweb_portfolio.sections.About
+import org.example.kobweb_portfolio.sections.ProjectsSection
 import org.example.kobweb_portfolio.sections.Skills
-import org.example.kobweb_portfolio.sections.projects
+
 import org.example.kobweb_portfolio.toSitePalette
 
-// Container that has a tagline and grid on desktop, and just the tagline on mobile
-
-
-// A demo grid that appears on the homepage because it looks good
 val HomeGridStyle by ComponentStyle.base {
     Modifier
         .gap(0.5.cssRem)
@@ -86,7 +83,7 @@ fun HomePage() {
 
                     About()
                     Skills()
-                    projects()
+                    ProjectsSection()
 
 
 
