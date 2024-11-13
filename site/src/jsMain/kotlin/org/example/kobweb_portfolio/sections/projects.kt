@@ -51,7 +51,8 @@ fun ProjectsSection() {
                 imageUrl = "/feedhub.png",
                 techStack = listOf("Kotlin", "Compose", "Gemini AI", "Supabase"),
                 sourceCodeUrl = "https://github.com/sai-charan2003/FeedHub",
-                ctx = ctx
+                ctx = ctx,
+                logoUrl = "/feedhublogo.png"
             )
 
             Divider(colorMode)
@@ -65,7 +66,8 @@ fun ProjectsSection() {
                 imageUrl = "/battery.png",
                 techStack = listOf("Kotlin", "Compose", "Wear OS", "Jetpack Glance"),
                 sourceCodeUrl = "https://github.com/sai-charan2003/Battery-Tracker",
-                ctx = ctx
+                ctx = ctx,
+                logoUrl = "/batterytrackerlogo.png"
             )
 
             Divider(colorMode)
@@ -78,7 +80,8 @@ fun ProjectsSection() {
                 imageUrl = "/syllabus.png",
                 techStack = listOf("Dart", "Flutter", "Firebase"),
                 sourceCodeUrl = "https://github.com/sai-charan2003/syllabus_spot",
-                ctx = ctx
+                ctx = ctx,
+                logoUrl = "/syllabusspotlogo.png"
             )
 
             Divider(colorMode)
@@ -90,7 +93,8 @@ fun ProjectsSection() {
                 imageUrl = "/bookmarker.png",
                 techStack = listOf("Flutter", "Google Drive", "Material 3"),
                 sourceCodeUrl = "https://github.com/sai-charan2003/Bookmarker",
-                ctx = ctx
+                ctx = ctx,
+                logoUrl = "/bookmarkerlogo.png"
             )
 
             Divider(colorMode)
@@ -103,8 +107,10 @@ fun ProjectsSection() {
                 imageUrl = "/appVersionTracker.png",
                 techStack = listOf("Flutter", "Ktor", "Supabase"),
                 sourceCodeUrl = "https://github.com/sai-charan2003/App-Version-Tracker-Frontend",
-                ctx = ctx
+                ctx = ctx,
+                logoUrl = "/versiontrackerlogo.png"
             )
+
         }
     }
 }
@@ -129,6 +135,7 @@ fun ProjectCard(
     imageUrl: String,
     techStack: List<String>,
     sourceCodeUrl: String,
+    logoUrl : String,
     ctx: PageContext
 ) {
     Column {
@@ -138,8 +145,24 @@ fun ProjectCard(
                 .fillMaxWidth()
                 .textAlign(TextAlign.Center)
                 .fontWeight(FontWeight.Bold)
+                .fontSize(25.px)
                 .margin(topBottom = 20.px)
         )
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .margin(bottom=20.px)
+                ,
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                logoUrl,
+                modifier = Modifier
+                    .size(80.px)
+                    .borderRadius(20.px)
+            )
+        }
+
 
         Row(
             modifier = Modifier.fillMaxWidth().margin(),
