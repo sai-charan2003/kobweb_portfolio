@@ -120,7 +120,7 @@ fun ProjectsSection() {
                 techStack = listOf("Kotlin", "Compose", "Supabase"),
                 sourceCodeUrl = "https://github.com/sai-charan2003/Setup-Box",
                 ctx = ctx,
-                logoUrl = "/setupBoxLogo.png"
+                logoUrl = "/setupboxLogo.png"
             )
 
         }
