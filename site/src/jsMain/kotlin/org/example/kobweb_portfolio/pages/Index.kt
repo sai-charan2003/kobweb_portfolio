@@ -80,16 +80,9 @@ fun HomePage() {
                 Column {
 
                    org.example.kobweb_portfolio.sections.HomePage()
-
                     About()
                     Skills()
                     ProjectsSection()
-
-
-
-
-
-
                 }
             }
         }

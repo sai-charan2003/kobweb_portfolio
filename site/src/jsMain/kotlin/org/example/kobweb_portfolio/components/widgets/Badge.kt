@@ -6,14 +6,15 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.LineStyle
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.ExperimentalComposeWebApi
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.w3c.dom.Text
 
+@OptIn(ExperimentalComposeWebApi::class)
 @Composable
 fun Badge(modifier: Modifier,text: String){
     val colormode= ColorMode.current
@@ -27,7 +28,10 @@ fun Badge(modifier: Modifier,text: String){
             .fontSize(15.px)
             .then(modifier)
     ) {
-        SpanText(text)
+        SpanText(text,
+            Modifier.styleModifier {
+                filter { color(Color.white)  }
+            })
     }
 
 

@@ -110,6 +110,18 @@ fun ProjectsSection() {
                 ctx = ctx,
                 logoUrl = "/versiontrackerlogo.png"
             )
+            Divider(colorMode)
+            ProjectCard(
+                title = "Setup Box",
+                description = "SetupBox is a TV application built with Jetpack Compose." +
+                        " It has a companion mobile app that allows users to add TV channels with appropriate links and app package names to open specific app when clicked. " +
+                        "These changes will then be reflected on the TV. Both the TV app and the mobile app communicate through a Supabase backend.",
+                imageUrl = "/setupboxscreenshots.png",
+                techStack = listOf("Kotlin", "Compose", "Supabase"),
+                sourceCodeUrl = "https://github.com/sai-charan2003/Setup-Box",
+                ctx = ctx,
+                logoUrl = "/setupBoxLogo.png"
+            )
 
         }
     }
@@ -158,6 +170,7 @@ fun ProjectCard(
             Image(
                 logoUrl,
                 modifier = Modifier
+                    .fillMaxSize()
                     .size(80.px)
                     .borderRadius(20.px)
             )
@@ -174,7 +187,11 @@ fun ProjectCard(
         }
 
         SimpleGrid(modifier = Modifier.fillMaxSize(), numColumns = numColumns(base = 1, sm = 1)) {
-            Image(imageUrl, modifier = Modifier.fillMaxWidth().padding(10.px).borderRadius(20.px),)
+            Image(
+                imageUrl,
+                modifier = Modifier.fillMaxWidth().padding(10.px).borderRadius(20.px),
+
+                )
 
             Column {
 
