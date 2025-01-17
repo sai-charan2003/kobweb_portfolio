@@ -1,9 +1,7 @@
 package org.example.kobweb_portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.TextAlign
-import com.varabyte.kobweb.compose.css.color
+import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -17,8 +15,8 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.HorizontalDivider
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.example.kobweb_portfolio.components.widgets.Badge
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
@@ -147,83 +145,85 @@ fun ProjectCard(
     imageUrl: String,
     techStack: List<String>,
     sourceCodeUrl: String,
-    logoUrl : String,
+    logoUrl: String,
     ctx: PageContext
 ) {
-    Column {
-        SpanText(
-            title,
+    SimpleGrid(
+        numColumns = numColumns(base = 1, sm = 2),
+        modifier = Modifier
+
+    ) {
+        // Image Section (Goes on top for small screens)
+        Image(
+            imageUrl,
             modifier = Modifier
                 .fillMaxWidth()
-                .textAlign(TextAlign.Center)
-                .fontWeight(FontWeight.Bold)
-                .fontSize(25.px)
-                .margin(topBottom = 20.px)
+                .height(300.px)
+                .borderRadius(15.px)
+                .objectFit(ObjectFit.Cover)
         )
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .margin(bottom=20.px)
-                ,
-            contentAlignment = Alignment.Center
+
+        // Text Content Section
+        Column(
+            modifier = Modifier.padding(20.px),
+            verticalArrangement = Arrangement.Center
         ) {
-            Image(
-                logoUrl,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .size(80.px)
-                    .borderRadius(20.px)
-            )
-        }
-
-
-        Row(
-            modifier = Modifier.fillMaxWidth().margin(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            techStack.forEach { tech ->
-                Badge(text = tech, modifier = Modifier.margin(leftRight = 10.px))
-            }
-        }
-
-        SimpleGrid(modifier = Modifier.fillMaxSize(), numColumns = numColumns(base = 1, sm = 1)) {
-            Image(
-                imageUrl,
-                modifier = Modifier.fillMaxWidth().padding(10.px).borderRadius(20.px),
-
+            // Header Section with Logo and Title
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    logoUrl,
+                    modifier = Modifier
+                        .size(50.px)
+                        .borderRadius(25.px)
                 )
+                SpanText(
+                    title,
+                    modifier = Modifier
+                        .fontWeight(FontWeight.Bold)
+                        .fontSize(24.px)
+                        .margin(left = 15.px)
+                )
+            }
 
-            Column {
+            // Description
+            SpanText(
+                description,
+                modifier = Modifier
+                    .textAlign(TextAlign.Start)
+                    .fontSize(16.px)
+                    .padding(top = 10.px)
+            )
 
-                    SpanText(
-                        description,
-                        modifier = Modifier
-                            .fontWeight(FontWeight.Bold)
-                            .fontSize(15.px)
-                            .textAlign(TextAlign.Center)
-                            .padding(10.px)
+            // Tech Stack Badges
+            Row(
+                modifier = Modifier.padding(top = 10.px),
+                horizontalArrangement = Arrangement.Start
+            ) {
+                techStack.forEach { tech ->
+                    Badge(
+                        text = tech,
+                        modifier = Modifier.margin(right = 5.px)
                     )
-
-
-
-                Row(
-                    modifier = Modifier.fillMaxSize().padding(all = 10.px),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Button(
-                        onClick = { ctx.router.navigateTo(sourceCodeUrl) },
-                        colorScheme = CustomColorSchemes.BlackAndWhite,
-                        size = ButtonSize.XS,
-                        modifier = org.example.kobweb_portfolio.Styles.ButtonStyle.toModifier().margin(20.px)
-                    ) {
-                        Text("Source Code")
-                    }
                 }
+            }
+
+            // Source Code Button
+            Button(
+                onClick = { ctx.router.navigateTo(sourceCodeUrl) },
+                colorScheme = CustomColorSchemes.BlackAndWhite,
+                size = ButtonSize.SM,
+                modifier = Modifier.padding(top = 15.px)
+            ) {
+                Text("View Source Code")
             }
         }
     }
 }
+
+
+
 
 @OptIn(ExperimentalComposeWebApi::class)
 @Composable

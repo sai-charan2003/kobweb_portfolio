@@ -1,14 +1,13 @@
 site:
-  title: "Kobweb_portfolio"
+  title: "Sai Charan"
 
 server:
   files:
     dev:
       contentRoot: "build/processedResources/js/main/public"
-      script: "build/dist/js/developmentExecutable/kobweb_portfolio.js"
-      api: "build/libs/kobweb_portfolio.jar"
+      script: "build/kotlin-webpack/js/developmentExecutable/kobweb_portfolio.js"
     prod:
-      script: "build/dist/js/productionExecutable/kobweb_portfolio.js"
+      script: "build/kotlin-webpack/js/productionExecutable/kobweb_portfolio.js"
       siteRoot: ".kobweb/site"
 
   port: 8080

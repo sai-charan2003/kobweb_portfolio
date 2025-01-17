@@ -6,13 +6,14 @@ import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.height
 import com.varabyte.kobweb.compose.ui.modifiers.minHeight
 import com.varabyte.kobweb.compose.ui.modifiers.width
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.vh
+import org.w3c.dom.css.CSS
 
-val WorkExperienceItemRoleAndDurationStyle by ComponentStyle {
+val WorkExperienceItemRoleAndDurationStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.XXSmall)
     }
@@ -27,7 +28,7 @@ val WorkExperienceItemRoleAndDurationStyle by ComponentStyle {
     }
 }
 
-val WorkExperienceItemOrgStyle by ComponentStyle {
+val WorkExperienceItemOrgStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.Small)
     }
@@ -42,7 +43,7 @@ val WorkExperienceItemOrgStyle by ComponentStyle {
     }
 }
 
-val ExperienceStyle by ComponentStyle {
+val ExperienceStyle = CssStyle {
     base {
         Modifier
             .width(100.percent)

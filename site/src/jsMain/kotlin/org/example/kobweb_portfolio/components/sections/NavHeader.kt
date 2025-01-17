@@ -1,11 +1,9 @@
 package org.example.kobweb_portfolio.components.sections
 
 import androidx.compose.runtime.*
-import com.varabyte.kobweb.browser.dom.ElementTarget
 import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.css.functions.clamp
 import com.varabyte.kobweb.compose.css.functions.saturate
-import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.foundation.layout.Spacer
@@ -13,43 +11,44 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.compose.ui.styleModifier
+import com.varabyte.kobweb.core.PageContext
 import com.varabyte.kobweb.core.rememberPageContext
-import com.varabyte.kobweb.silk.components.animation.Keyframes
-import com.varabyte.kobweb.silk.components.animation.toAnimation
-import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.forms.Button
+import com.varabyte.kobweb.silk.components.forms.ButtonSize
 import com.varabyte.kobweb.silk.components.icons.CloseIcon
 import com.varabyte.kobweb.silk.components.icons.HamburgerIcon
 import com.varabyte.kobweb.silk.components.icons.MoonIcon
 import com.varabyte.kobweb.silk.components.icons.SunIcon
-import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
-import com.varabyte.kobweb.silk.components.icons.fa.FaInstagram
-import com.varabyte.kobweb.silk.components.icons.fa.FaLinkedinIn
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIfAtLeast
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayUntil
+import com.varabyte.kobweb.silk.components.icons.fa.FaIcon
+import com.varabyte.kobweb.silk.components.icons.fa.FaPaperclip
+import com.varabyte.kobweb.silk.components.icons.fa.IconCategory
+
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
 import com.varabyte.kobweb.silk.components.navigation.UndecoratedLinkVariant
 import com.varabyte.kobweb.silk.components.overlay.Overlay
 import com.varabyte.kobweb.silk.components.overlay.OverlayVars
-import com.varabyte.kobweb.silk.components.overlay.PopupPlacement
-import com.varabyte.kobweb.silk.components.overlay.Tooltip
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.base
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
-import com.varabyte.kobweb.silk.components.style.common.SmoothColorStyle
-import com.varabyte.kobweb.silk.components.style.toModifier
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.animation.Keyframes
+import com.varabyte.kobweb.silk.style.animation.toAnimation
+import com.varabyte.kobweb.silk.style.base
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
+import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
+import com.varabyte.kobweb.silk.style.common.SmoothColorStyle
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.background
 import com.varabyte.kobweb.silk.theme.colors.palette.border
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
 import org.jetbrains.compose.web.css.*
 import org.example.kobweb_portfolio.components.widgets.IconButton
+import org.example.kobweb_portfolio.sections.CustomColorSchemes
 import org.example.kobweb_portfolio.toSitePalette
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.dom.Text
 
-val NavHeaderStyle = ComponentStyle.base("bs-nav-header", extraModifiers = { SmoothColorStyle.toModifier() }) {
+val NavHeaderStyle = CssStyle.base( extraModifier = { SmoothColorStyle.toModifier() }) {
     Modifier
         .fillMaxWidth()
         .padding(left = 1.cssRem, right = 1.cssRem, top = 1.cssRem, bottom = 1.cssRem)
@@ -62,44 +61,61 @@ val NavHeaderStyle = ComponentStyle.base("bs-nav-header", extraModifiers = { Smo
 }
 
 @Composable
-private fun NavLink(path: String, text: String) {
+private fun navLink(path: String, text: String) {
     Link(path, text, variant = UndecoratedLinkVariant.then(UncoloredLinkVariant))
 }
 
 @Composable
-private fun MenuItems() {
-    NavLink("#home", "Home")
-    NavLink("#aboutme", "About")
-    NavLink("#skills","Skills")
-    NavLink("#projects","Projects")
-    NavLink("#contact","Contact")
+private fun menuItems() {
+    navLink("#home", "Home")
+    navLink("#aboutme", "About")
+    navLink("#skills","Skills")
+    navLink("#projects","Projects")
+    navLink("#contact","Contact")
 
 }
 
 @Composable
-private fun ColorModeButton() {
+private fun colorModeButton() {
     var colorMode by ColorMode.currentState
     IconButton(onClick = { colorMode = colorMode.opposite },) {
         if (colorMode.isLight) MoonIcon() else SunIcon()
     }
 
 }
+@Composable
+private fun resumeButton(ctx : PageContext){
+
+    Button(
+        onClick = {
+            ctx.router.navigateTo("https://drive.google.com/file/d/1cevEfQg7ttt5hPyXAzQkxEolP9KJM5s0/view")
+
+        },
+        colorScheme = CustomColorSchemes.BlackAndWhite,
+
+        size = ButtonSize.SM,
+    ) {
+        FaIcon("paperclip", modifier = Modifier.padding(right = 5.px), IconCategory.SOLID,)
+
+        Text("Resume")
+    }
+}
 
 @Composable
-private fun HamburgerButton(onClick: () -> Unit) {
+private fun hamburgerButton(onClick: () -> Unit) {
     IconButton(onClick) {
         HamburgerIcon()
     }
 }
 
 @Composable
-private fun CloseButton(onClick: () -> Unit) {
+private fun closeButton(onClick: () -> Unit) {
     IconButton(onClick) {
         CloseIcon()
     }
 }
 
-val SideMenuSlideInAnim by Keyframes {
+val SideMenuSlideInAnim = Keyframes {
     from {
         Modifier.translateX(100.percent)
     }
@@ -125,19 +141,18 @@ enum class SideMenuState {
 
 @OptIn(ExperimentalComposeWebApi::class)
 @Composable
-fun NavHeader() {
+fun navHeader() {
     val ctx= rememberPageContext()
-
     Row(NavHeaderStyle.toModifier()) {
-        val colormode=ColorMode.current
         Text("Sai Charan")
         Spacer()
         Row(
             Modifier.gap(1.5.cssRem).displayIfAtLeast(Breakpoint.MD),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            MenuItems()
-            ColorModeButton()
+            menuItems()
+            resumeButton(ctx = ctx)
+//            colorModeButton()
         }
 
 
@@ -151,7 +166,7 @@ fun NavHeader() {
             var menuState by remember { mutableStateOf(SideMenuState.CLOSED) }
 
 
-            HamburgerButton(onClick =  { menuState = SideMenuState.OPEN })
+            hamburgerButton(onClick =  { menuState = SideMenuState.OPEN })
 
             if (menuState != SideMenuState.CLOSED) {
                 SideMenu(
@@ -203,9 +218,9 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                     .onAnimationEnd { onAnimationEnd() },
                 horizontalAlignment = Alignment.End
             ) {
-                CloseButton(onClick = { close() })
+                closeButton(onClick = { close() })
                 Column(Modifier.padding(right = 0.75.cssRem).gap(1.5.cssRem).fontSize(1.4.cssRem), horizontalAlignment = Alignment.End) {
-                    MenuItems()
+                    menuItems()
                 }
             }
         }

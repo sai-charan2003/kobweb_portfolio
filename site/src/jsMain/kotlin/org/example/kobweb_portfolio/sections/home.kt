@@ -1,37 +1,34 @@
 package org.example.kobweb_portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.ObjectFit
-import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.forms.Button
-import com.varabyte.kobweb.silk.components.forms.ButtonSize
-import com.varabyte.kobweb.silk.components.forms.ButtonStyle
-import com.varabyte.kobweb.silk.components.icons.fa.FaPaperclip
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorScheme
-import com.varabyte.kobweb.silk.theme.colors.SilkPalette
+
 import com.varabyte.kobweb.silk.theme.shapes.Circle
 import com.varabyte.kobweb.silk.theme.shapes.clip
-import org.example.kobweb_portfolio.Styles.AboutStyle
-import org.example.kobweb_portfolio.components.layouts.PageLayout
-import org.jetbrains.compose.web.attributes.InputType
-import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.css.vh
-import org.jetbrains.compose.web.dom.Button
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Text
+
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.core.rememberPageContext
+import com.varabyte.kobweb.silk.components.forms.CheckboxKind
+import com.varabyte.kobweb.silk.components.icons.fa.FaAngleDown
+import com.varabyte.kobweb.silk.components.icons.fa.FaIcon
+import com.varabyte.kobweb.silk.components.icons.fa.IconCategory
+import com.varabyte.kobweb.silk.components.layout.SimpleGrid
+import com.varabyte.kobweb.silk.components.layout.numColumns
+import com.varabyte.kobweb.silk.style.animation.toAnimation
+import com.varabyte.kobweb.silk.style.toModifier
+import org.example.kobweb_portfolio.BounceKeyframes
+import org.example.kobweb_portfolio.HeadlineTextStyle
+import org.example.kobweb_portfolio.SubheadlineTextStyle
+import org.jetbrains.compose.web.css.*
 
 object CustomColorSchemes {
 
@@ -50,49 +47,75 @@ object CustomColorSchemes {
 }
 
 @Composable
+fun homePage() {
+    val ctx = rememberPageContext()
 
-fun HomePage() {
-    val ctx= rememberPageContext()
-
-        Column (modifier= Modifier
+    SimpleGrid(
+        modifier = Modifier
             .width(100.percent)
-
-            .height(100.vh)
+            .height(80.vh)
             .id("home"),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center) {
-            Image(
-                "/developer.png", modifier = Modifier.clip(Circle()).objectFit(ObjectFit.Fill), width = 200,
-                height = 200,
-            )
-
+        numColumns = numColumns(base = 1, sm = 2)
+    ) {
+        // Left Section: Text Content
+        Column(
+            modifier = Modifier.fillMaxHeight().padding(2.cssRem),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.Start
+        ) {
             SpanText(
-                "Hi there, Welcome to my Portfolio",
-                modifier = Modifier.fontSize(30.px).fontWeight(FontWeight.Normal).padding(bottom = 2.cssRem)
+                "Hi there!",
+                modifier = SubheadlineTextStyle.toModifier()
             )
 
             SpanText(
                 "I'm Sai Charan",
-                modifier = Modifier.fillMaxWidth().textAlign(TextAlign.Center).fontWeight(FontWeight.Bolder)
-                    .fontSize(40.px),
+                modifier = HeadlineTextStyle.toModifier()
             )
-            Button(
-                onClick = {
-                          ctx.router.navigateTo("https://drive.google.com/file/d/1cevEfQg7ttt5hPyXAzQkxEolP9KJM5s0/view")
-
-                },
-                colorScheme = CustomColorSchemes.BlackAndWhite,
-
-                size = ButtonSize.LG,
-                modifier = org.example.kobweb_portfolio.Styles.ButtonStyle.toModifier().margin(top = 70.px)
-            ) {
-                FaPaperclip()
-                Text("Resume")
-            }
-
-
-
+            SpanText(
+                "Android & Swift Developer | Tech Enthusiast",
+                modifier = Modifier.margin(top = 1.cssRem).fontSize(1.2.cssRem).color(Color.rgb(120, 120, 120))
+            )
         }
 
+        // Right Section: Profile Image
+        Column(
+            modifier = Modifier.fillMaxHeight().padding(2.cssRem),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.End
+        ) {
+            Image(
+                "/developer.png",
+                modifier = Modifier
+                    .clip(Circle())
+                    .objectFit(ObjectFit.Cover)
+                    .width(250.px)
+                    .height(250.px)
+            )
+        }
+    }
 
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 1.cssRem)
+            ,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        FaAngleDown(
+            modifier = Modifier
+
+                .animation(BounceKeyframes.toAnimation(
+                    duration = 1.s,
+                    iterationCount = AnimationIterationCount.Infinite
+                ))
+                .cursor(Cursor.Pointer)
+                .onClick {
+                    ctx.router.navigateTo("#aboutme")  // Scroll to the next section with id="about"
+                }
+        )
+
+    }
 }
+
+

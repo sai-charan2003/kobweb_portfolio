@@ -20,11 +20,11 @@ import com.varabyte.kobweb.silk.components.icons.fa.FaInstagram
 import com.varabyte.kobweb.silk.components.icons.fa.FaLinkedinIn
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.base
-import com.varabyte.kobweb.silk.components.style.toModifier
-import com.varabyte.kobweb.silk.components.style.vars.color.ColorVar
+
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.base
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.example.kobweb_portfolio.components.widgets.IconButton
 import org.jetbrains.compose.web.css.cssRem
@@ -35,7 +35,7 @@ import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.filter
 import org.jetbrains.compose.web.dom.Button
 
-val FooterStyle by ComponentStyle.base {
+val FooterStyle = CssStyle.base {
     Modifier
         .backgroundColor(colorMode.toSitePalette().nearBackground)
         .padding(topBottom = 1.5.cssRem, leftRight = 10.percent)

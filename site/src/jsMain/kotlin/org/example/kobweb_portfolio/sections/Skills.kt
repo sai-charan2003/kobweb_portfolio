@@ -16,7 +16,6 @@ import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.example.kobweb_portfolio.Styles.ExperienceStyle
 import org.example.kobweb_portfolio.Styles.Skillsbox
@@ -146,6 +145,18 @@ fun Skills() {
                         )
                         SpanText("Flutter",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
                     }
+                    Column {
+                        Image(
+                            src = "/Swift.svg",
+                            modifier = Modifier.size(42.px)
+                                .styleModifier {
+                                    mixBlendMode(MixBlendMode.Normal)
+                                }
+                                .margin(10.px)
+                                .align(Alignment.CenterHorizontally)
+                        )
+                        SpanText("Swift",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
+                    }
 
 
                     Column {
@@ -161,18 +172,7 @@ fun Skills() {
                         )
                         SpanText("Kobweb",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
                     }
-                    Column {
-                        Image(
-                            src = "/supabase.svg",
-                            modifier = Modifier.size(42.px)
-                                .styleModifier {
-                                    mixBlendMode(MixBlendMode.Normal)
-                                }
-                                .margin(10.px)
-                                .align(Alignment.CenterHorizontally)
-                        )
-                        SpanText("Supabase",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
-                    }
+
 
 
 
@@ -230,6 +230,18 @@ fun Skills() {
                                 .align(Alignment.CenterHorizontally)
                         )
                         SpanText("Ktor",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
+                    }
+                    Column {
+                        Image(
+                            src = "/supabase.svg",
+                            modifier = Modifier.size(42.px)
+                                .styleModifier {
+                                    mixBlendMode(MixBlendMode.Normal)
+                                }
+                                .margin(10.px)
+                                .align(Alignment.CenterHorizontally)
+                        )
+                        SpanText("Supabase",modifier=Modifier.fillMaxWidth().textAlign(TextAlign.Center))
                     }
 
 

@@ -15,8 +15,8 @@ import com.varabyte.kobweb.silk.components.forms.ButtonSize
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.toModifier
 import org.example.kobweb_portfolio.Styles.ButtonStyle
 import org.example.kobweb_portfolio.components.widgets.Badge
 import org.example.kobweb_portfolio.sections.CustomColorSchemes
