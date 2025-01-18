@@ -5,6 +5,7 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.silk.init.InitSilk
 import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
+import com.varabyte.kobweb.silk.theme.colors.ColorScheme
 import com.varabyte.kobweb.silk.theme.colors.palette.background
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 
@@ -55,4 +56,40 @@ fun initTheme(ctx: InitSilkContext) {
     ctx.theme.palettes.light.color = Colors.Black
     ctx.theme.palettes.dark.background = Color.rgb(0x06080B)
     ctx.theme.palettes.dark.color = Colors.White
+}
+
+object CustomColorSchemes {
+
+    val BlackAndWhite = object : ColorScheme {
+        override val _50 = Color.rgb(0XFFFFFF)
+        override val _100 = Color.rgb(0XFFFFFF)
+        override val _200 = Color.rgb(0XFFFFFF)
+        override val _300 = Color.rgb(0XFFFFFF)
+        override val _400 = Color.rgb(0XFFFFFF)
+        override val _500 = Color.rgb(0X000000)
+        override val _600 = Color.rgb(0X000000)
+        override val _700 = Color.rgb(0X000000)
+        override val _800 = Color.rgb(0X000000)
+        override val _900 = Color.rgb(0X000000)
+    }
+    val GitHubColors = object : ColorScheme {
+        // Light blue shades
+        override val _50 = Color.rgb(0xf8fafc)    // Lightest
+        override val _100 = Color.rgb(0xf1f5f9)   // Lighter
+        override val _200 = Color.rgb(0xdbe7fb)   // Default button state
+        override val _300 = Color.rgb(0xccdcf7)   // Hover state
+        override val _400 = Color.rgb(0xbdd1f3)   // Active/Click state
+        override val _500 = Color.rgb(0x24292e)   // Text color
+        override val _600 = Color.rgb(0x1f2428)   // Darker text
+        override val _700 = Color.rgb(0x1b1f23)   // Dark mode elements
+        override val _800 = Color.rgb(0x13161a)   // Dark mode background
+        override val _900 = Color.rgb(0x0d1117)   // Darkest background
+    }
+
+
+
+
+
+
+
 }

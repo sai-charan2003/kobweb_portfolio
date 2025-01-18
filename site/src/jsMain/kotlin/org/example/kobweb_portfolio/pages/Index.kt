@@ -9,9 +9,10 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.Page
 
 import org.example.kobweb_portfolio.components.layouts.PageLayout
-import org.example.kobweb_portfolio.sections.About
-import org.example.kobweb_portfolio.sections.ProjectsSection
-import org.example.kobweb_portfolio.sections.Skills
+import org.example.kobweb_portfolio.components.sections.home.HomeSection
+import org.example.kobweb_portfolio.components.sections.aboutme.AboutMeSection
+import org.example.kobweb_portfolio.components.sections.project.ProjectsSection
+import org.example.kobweb_portfolio.components.sections.skills.Skills
 
 
 @Page
@@ -27,8 +28,8 @@ fun homePage() {
 
                 Column {
 
-                   org.example.kobweb_portfolio.sections.homePage()
-                    About()
+                   HomeSection()
+                    AboutMeSection()
                     Skills()
                     ProjectsSection()
                 }

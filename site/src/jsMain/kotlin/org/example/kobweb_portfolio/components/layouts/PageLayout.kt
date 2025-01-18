@@ -12,16 +12,14 @@ import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import kotlinx.browser.document
+import org.example.kobweb_portfolio.Styles.PageContentStyle
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.percent
-import org.example.kobweb_portfolio.components.sections.Footer
-import org.example.kobweb_portfolio.components.sections.navHeader
+import org.example.kobweb_portfolio.components.sections.footer.Footer
+import org.example.kobweb_portfolio.components.sections.header.NavHeader
 
-val PageContentStyle = CssStyle {
-    base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem, topBottom = 4.cssRem) }
-    Breakpoint.MD { Modifier.maxWidth(80.cssRem) }
-}
+
 
 
 
@@ -56,7 +54,7 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
                 content()
             }
         }
-        navHeader()
+        NavHeader()
         // Associate the footer with the row that will get pushed off the bottom of the page if it can't fit.
         Footer(Modifier.fillMaxWidth().gridRow(2))
     }
