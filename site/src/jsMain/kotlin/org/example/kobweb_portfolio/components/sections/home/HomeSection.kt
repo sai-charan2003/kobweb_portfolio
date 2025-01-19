@@ -18,10 +18,12 @@ fun HomeSection() {
     SimpleGrid(
         modifier = Modifier
             .width(100.percent)
-            .height(80.vh)
-            .id("home"),
+            .height(90.vh)
+            .id("home")
+            .margin(top = 10.px),
         numColumns = numColumns(base = 1, sm = 2)
     ) {
+
         Introduction()
         DeveloperPhoto()
     }

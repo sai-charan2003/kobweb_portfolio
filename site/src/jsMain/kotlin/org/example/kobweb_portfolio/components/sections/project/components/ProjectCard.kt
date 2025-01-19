@@ -18,6 +18,7 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
 import org.example.kobweb_portfolio.CustomColorSchemes
 import org.example.kobweb_portfolio.Styles.DescriptionStyle
+import org.example.kobweb_portfolio.Styles.ProjectImageStyle
 import org.example.kobweb_portfolio.components.sections.project.ProjectItemsEnums
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.px
@@ -41,10 +42,10 @@ fun ProjectCard(
         ) {
             Image(
                 projectDetails.imageUrl,
-                modifier = Modifier
+                modifier = ProjectImageStyle.toModifier()
                     .fillMaxWidth()
-                    .height(420.px)
-                    .objectFit(ObjectFit.Fill)
+
+                    .objectFit(ObjectFit.Cover)
                     .borderRadius(topLeft = 10.px, topRight = 10.px)
             )
 
@@ -108,6 +109,7 @@ fun ProjectCard(
                         .textAlign(TextAlign.Justify)
 
                 )
+
             }
         }
     }

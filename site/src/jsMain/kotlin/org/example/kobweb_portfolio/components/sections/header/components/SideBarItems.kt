@@ -29,7 +29,7 @@ fun SideBarItems(menuState: SideMenuEnums, close: () -> Unit, onAnimationEnd: ()
             Column(
                 Modifier
                     .fillMaxHeight()
-                    .width(clamp(8.cssRem, 33.percent, 10.cssRem))
+                    .width(clamp(10.cssRem, 40.percent, 15.cssRem))
                     .align(Alignment.CenterEnd)
                     .padding(top = 1.cssRem, leftRight = 1.cssRem)
                     .gap(1.5.cssRem)

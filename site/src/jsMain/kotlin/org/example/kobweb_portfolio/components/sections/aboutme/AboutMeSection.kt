@@ -12,6 +12,7 @@ import com.varabyte.kobweb.silk.style.toModifier
 import org.example.kobweb_portfolio.Styles.AboutMeColumnStyle
 import org.example.kobweb_portfolio.Styles.AboutMeStyle
 import org.example.kobweb_portfolio.components.sections.components.SectionHeader
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.vh
@@ -21,7 +22,7 @@ fun AboutMeSection() {
     Column(
         modifier = AboutMeColumnStyle.toModifier()
             .width(100.percent)
-            .margin(leftRight = 10.px, topBottom = 10.px)
+            .padding(leftRight = 10.px, topBottom = 10.px)
 
 
 
@@ -34,12 +35,16 @@ fun AboutMeSection() {
 
         SectionHeader("About Me")
 
-        SpanText(text = "I am an Android developer with over 2 years of experience. " +
-                "My expertise lies in crafting dynamic and visually engaging applications " +
-                "using Jetpack Compose and Flutter, both built with a foundation in the Material UI design language. " +
-                "I am on a continuous learning journey, " +
-                "always seeking opportunities to enhance my skills and tackle new challenges.", modifier = AboutMeStyle.toModifier().fontWeight(
-            FontWeight.Thin))
+        SpanText(text = "Mobile developer focused on crafting impactful Android applications with a strong emphasis on " +
+                "user experience and visual design. Proficient in creating intuitive interfaces using Jetpack Compose and Flutter, " +
+                "adhering to Material Design principles. Currently expanding expertise in cross-platform " +
+                "development with Swift and Kotlin Multiplatform. " +
+                "Passionate about continuous learning and tackling challenging problems to deliver innovative solutions.",
+            modifier = AboutMeStyle.toModifier()
+                .margin(top = 2.cssRem)
+
+
+        )
 
 
     }

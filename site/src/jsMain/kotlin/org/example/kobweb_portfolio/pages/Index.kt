@@ -11,6 +11,7 @@ import com.varabyte.kobweb.core.Page
 import org.example.kobweb_portfolio.components.layouts.PageLayout
 import org.example.kobweb_portfolio.components.sections.home.HomeSection
 import org.example.kobweb_portfolio.components.sections.aboutme.AboutMeSection
+import org.example.kobweb_portfolio.components.sections.experience.ExperienceSection
 import org.example.kobweb_portfolio.components.sections.project.ProjectsSection
 import org.example.kobweb_portfolio.components.sections.skills.Skills
 
@@ -24,16 +25,14 @@ fun homePage() {
             fillMaxWidth()
                 .id("home")
         ) {
-            Box {
-
                 Column {
 
-                   HomeSection()
+                    HomeSection()
                     AboutMeSection()
+                    ExperienceSection()
                     Skills()
                     ProjectsSection()
                 }
-            }
         }
     }
 

@@ -85,10 +85,11 @@ val BounceKeyframes = Keyframes {
 val NavHeaderStyle = CssStyle.base( extraModifier = { SmoothColorStyle.toModifier() }) {
     Modifier
         .fillMaxWidth()
-        .padding(left = 1.cssRem, right = 1.cssRem, top = 1.cssRem, bottom = 1.cssRem)
+        .padding(1.cssRem)
         .fontSize(1.25.cssRem)
         .position(Position.Fixed)
         .top(0.percent)
+
         .backgroundColor(colorMode.toPalette().background.toRgb().copyf(alpha = 0.65f))
         .backdropFilter(saturate(180.percent), blur(5.px))
         .borderBottom(width = 1.px, style = LineStyle.Solid, color = colorMode.toPalette().border)
@@ -195,15 +196,15 @@ var BadgeTextStyle = CssStyle {
 
     }
     Breakpoint.SM {
-        Modifier.fontSize(FontSize.Small)
+        Modifier.fontSize(FontSize.XSmall)
 
     }
     Breakpoint.MD {
-        Modifier.fontSize(FontSize.Medium)
+        Modifier.fontSize(FontSize.Small)
 
     }
     Breakpoint.LG {
-        Modifier.fontSize(FontSize.Large)
+        Modifier.fontSize(FontSize.Medium)
 
     }
 
@@ -231,7 +232,7 @@ var ProjectCardStyle = CssStyle {
 
 val PageContentStyle = CssStyle {
     base {
-       Modifier.maxWidth(90.cssRem)
+       Modifier.maxWidth(90.cssRem).margin(leftRight = 10.px)
     }
     Breakpoint.MD {
         Modifier.maxWidth(80.cssRem)
@@ -309,6 +310,85 @@ var AboutMeColumnStyle = CssStyle {
     }
 
 
+
+}
+var ProjectImageStyle = CssStyle {
+
+    base {
+        Modifier.height(280.px)
+
+    }
+    Breakpoint.SM {
+        Modifier.height(200.px)
+
+    }
+    Breakpoint.MD {
+        Modifier.height(350.px)
+
+    }
+    Breakpoint.LG {
+        Modifier.height(420.px)
+
+    }
+
+}
+var DesignationStyle = CssStyle {
+    base {
+        Modifier.fontSize(FontSize.Small)
+
+    }
+    Breakpoint.SM {
+        Modifier.fontSize(FontSize.Medium)
+
+    }
+    Breakpoint.MD {
+        Modifier.fontSize(FontSize.Large)
+
+    }
+    Breakpoint.LG {
+        Modifier.fontSize(FontSize.XLarge)
+
+    }
+
+}
+
+var CompanyStyle = CssStyle {
+    base {
+        Modifier.fontSize(FontSize.Small)
+
+    }
+    Breakpoint.SM {
+        Modifier.fontSize(FontSize.Small)
+
+    }
+    Breakpoint.MD {
+        Modifier.fontSize(FontSize.Medium)
+
+    }
+    Breakpoint.LG {
+        Modifier.fontSize(FontSize.Large)
+
+    }
+
+}
+
+var WorkStyle = CssStyle {
+    base {
+        Modifier.fontSize(FontSize.Small)
+
+    }
+    Breakpoint.SM {
+        Modifier.fontSize(FontSize.Small)
+
+    }
+    Breakpoint.MD {
+        Modifier.fontSize(FontSize.Medium)
+
+    }
+    Breakpoint.LG {
+        Modifier.fontSize(FontSize.Large)
+
+    }
 
 }
 

@@ -25,22 +25,17 @@ fun ProjectsSection() {
             .id("projects")
     ) {
         SectionHeader(title = "Projects")
-
-        SimpleGrid(modifier = Modifier.margin(top = 2.cssRem), numColumns = numColumns(base = 1, sm = 2)) {
+        SimpleGrid(modifier = Modifier.margin(top = 2.cssRem), numColumns = numColumns(base = 1, sm = 2 )) {
             ProjectItemsEnums.entries.forEach {
                 ProjectCard(
                     it,
                     ctx
                 )
-//                if (it != ProjectItemsEnums.entries.last()){
-//                    Divider(colorMode)
-//                }
 
             }
 
-
-
         }
+
     }
 }
 

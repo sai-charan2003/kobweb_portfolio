@@ -19,6 +19,6 @@ fun SectionHeader(title : String) {
             .fontSize(40.px)
             .fillMaxWidth()
             .textAlign(TextAlign.Center)
-            .margin(bottom = 10.px)
+            .margin(topBottom = 10.px)
     )
 }

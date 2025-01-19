@@ -1,11 +1,13 @@
 package org.example.kobweb_portfolio.components.sections.header.components
 
 import androidx.compose.runtime.*
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.gap
+import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import org.example.kobweb_portfolio.components.sections.header.SideMenuEnums
@@ -17,8 +19,9 @@ fun SideBar() {
         Modifier
             .fontSize(1.5.cssRem)
             .gap(1.cssRem)
-            .displayUntil(Breakpoint.MD),
-        verticalAlignment = Alignment.CenterVertically
+            .displayUntil(Breakpoint.MD)
+            ,
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         var menuState by remember { mutableStateOf(SideMenuEnums.CLOSED) }
 

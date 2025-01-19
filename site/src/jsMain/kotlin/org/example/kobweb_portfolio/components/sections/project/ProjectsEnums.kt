@@ -62,5 +62,16 @@ enum class ProjectItemsEnums(
         logoUrl = "/setupboxLogo.png",
         techStack = listOf("Kotlin", "Compose", "Supabase"),
         sourceCodeUrl = "https://github.com/sai-charan2003/Setup-Box"
-    )
+    ),
+
+    QUICKMARK(
+        title = "Quickmark",
+        shortDescription = "QuickMark is a simple macOS bookmark manager built with SwiftUI",
+        imageUrl ="/quickmark.png",
+        logoUrl = "/quickmark_logo.png",
+        techStack = listOf("Swift","Core Data"),
+        sourceCodeUrl = "https://github.com/sai-charan2003/Quickmark"
+    ),
+
+
 }

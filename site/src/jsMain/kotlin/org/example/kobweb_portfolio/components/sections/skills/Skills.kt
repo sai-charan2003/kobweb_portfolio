@@ -19,31 +19,31 @@ import org.jetbrains.compose.web.css.*
 fun Skills() {
     Column(
         modifier = Modifier
-            .fillMaxWidth()
+            .width(100.percent)
             .height(100.vh)
             .id("skills"),
-
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         SectionHeader("Skills")
-            SimpleGrid(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .border(
-                        1.px, LineStyle.Solid
-                    )
-                    .borderRadius(r = 10.px)
-                    .margin(top = 20.px),
-                numColumns = numColumns(base = 2, sm = 2, md = 2, lg = 6)
-            ) {
-                SkillsEnums.entries.forEach {
-                    SkillLogo(imageSrc = it.imageSRC, title = it.title)
-                }
+        SimpleGrid(
+            modifier = Modifier
+
+                .borderRadius(8.px)
+                .backgroundColor(Color("#131315"))
+                .padding(topBottom = 10.px)
+                .fillMaxWidth()
+            ,
+            numColumns = numColumns(base = 2, sm = 2, md = 4, lg = 6)
+        ) {
+            SkillsEnums.entries.forEach {
+                SkillLogo(imageSrc = it.imageSRC, title = it.title)
             }
+        }
 
     }
 }
+
 
 
 

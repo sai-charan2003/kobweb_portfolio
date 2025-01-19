@@ -19,7 +19,7 @@ import org.jetbrains.compose.web.css.cssRem
 @Composable
 fun Introduction(){
     Column(
-        modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(2.cssRem),
+        modifier = Modifier.fillMaxWidth().padding(2.cssRem),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
