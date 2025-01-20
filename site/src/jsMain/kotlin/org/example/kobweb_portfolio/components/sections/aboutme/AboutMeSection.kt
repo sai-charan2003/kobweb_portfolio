@@ -35,11 +35,10 @@ fun AboutMeSection() {
 
         SectionHeader("About Me")
 
-        SpanText(text = "Mobile developer focused on crafting impactful Android applications with a strong emphasis on " +
-                "user experience and visual design. Proficient in creating intuitive interfaces using Jetpack Compose and Flutter, " +
-                "adhering to Material Design principles. Currently expanding expertise in cross-platform " +
-                "development with Swift and Kotlin Multiplatform. " +
-                "Passionate about continuous learning and tackling challenging problems to deliver innovative solutions.",
+        SpanText(text = "I'm a skilled software developer specializing in cross-platform mobile application development," +
+                " I possess expertise in Android development using Kotlin and Jetpack Compose, as well as cross-platform development with Flutter. " +
+                "My proficiency extends to the Apple ecosystem, encompassing iOS and macOS development using Swift. Passionate about technology and dedicated to continuous learning, " +
+                "I constantly explore emerging technologies and design trends.",
             modifier = AboutMeStyle.toModifier()
                 .margin(top = 2.cssRem)
 

@@ -50,11 +50,12 @@ fun ExperienceSection() {
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
+
                     Image(
                         "/commons_logo.png",
                         modifier = Modifier
-                            .size(30.px)
-                            .borderRadius(15.px)
+                            .size(40.px)
+                            .borderRadius(20.px)
                             .margin(right = 10.px)
                     )
                     Column {
@@ -75,7 +76,7 @@ fun ExperienceSection() {
                                 text = "Platform Commons",
                                 modifier = CompanyStyle.toModifier()
                                     .fontWeight(FontWeight.Medium)
-                                    .margin(right = 5.px)
+                                    .margin(right = 15.px)
                             )
                             FaCalendar(
                                 modifier = Modifier.margin(right = 5.px)
@@ -98,8 +99,8 @@ fun ExperienceSection() {
                         .color(Color.dimgray)
                         .fontSize(14.px) // Smaller font size for readability
                 )
-                SimpleGrid (
-                    numColumns = numColumns(base =2,sm=2, lg = 4),
+                SimpleGrid(
+                    numColumns = numColumns(base = 2, sm = 2, lg = 4),
                     modifier = Modifier.margin(top = 10.px)
                 ) {
                     techStack.forEach {

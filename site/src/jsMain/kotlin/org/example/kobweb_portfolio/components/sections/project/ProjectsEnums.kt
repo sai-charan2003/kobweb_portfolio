@@ -11,7 +11,7 @@ enum class ProjectItemsEnums(
 ) {
     FEED_HUB(
         title = "FeedHub",
-        shortDescription = "An RSS reader with AI summaries and Supabase backend.",
+        shortDescription = "FeedHub is an RSS reader built with Kotlin and Jetpack Compose, featuring a widget built with Jetpack Glance and AI-generated article summaries powered by Google Gemini.",
         imageUrl = "/feedhub.png",
         logoUrl = "/feedhublogo.png",
         techStack = listOf("Kotlin", "Compose", "Gemini AI", "Supabase"),
@@ -20,7 +20,7 @@ enum class ProjectItemsEnums(
 
     BATTERY_TRACKER(
         title = "Battery Tracker",
-        shortDescription = "Monitors battery health and displays data via widgets.",
+        shortDescription = "Battery Tracker is an Android application that has a widget to display battery information of the phone and connected devices such as Wear OS and headphones.",
         imageUrl = "/battery.png",
         logoUrl = "/batterytrackerlogo.png",
         techStack = listOf("Kotlin", "Compose", "Wear OS", "Jetpack Glance"),
@@ -29,7 +29,7 @@ enum class ProjectItemsEnums(
 
     SYLLABUS_SPOT(
         title = "Syllabus Spot",
-        shortDescription = "A syllabus management app built with Flutter, enabling cross-platform access to academic syllabi.",
+        shortDescription = "Syllabus Spot is a syllabus management app build using Flutter, enabling users to conveniently access their academic syllabus across multiple platforms.",
         imageUrl = "/syllabus.png",
         logoUrl = "/syllabusspotlogo.png",
         techStack = listOf("Dart", "Flutter", "Firebase"),
@@ -38,7 +38,7 @@ enum class ProjectItemsEnums(
 
     BOOKMARKER(
         title = "Bookmarker",
-        shortDescription = "A mobile app to save and manage website links, with Google Drive sync.",
+        shortDescription = "Bookmarker is a mobile app that allows users to save, manage, and sync website links with Google Drive for seamless access across devices.",
         imageUrl = "/bookmarker.png",
         logoUrl = "/bookmarkerlogo.png",
         techStack = listOf("Flutter", "Google Drive", "Material 3"),
@@ -47,7 +47,7 @@ enum class ProjectItemsEnums(
 
     VERSION_TRACKER(
         title = "Version Tracker",
-        shortDescription = "An API to manage app versions, compare local and server versions, and push updates.",
+        shortDescription = "Version Tracker is an API designed for developers to manage app versions efficiently. It allows the app to compare the local version with the stored server version and seamlessly push updates to users.",
         imageUrl = "/appVersionTracker.png",
         logoUrl = "/versiontrackerlogo.png",
         techStack = listOf("Flutter", "Ktor", "Supabase"),
@@ -57,7 +57,7 @@ enum class ProjectItemsEnums(
 
     SETUP_BOX(
         title = "Setup Box",
-        shortDescription = "A TV app with real-time channel sync via Supabase, with a companion mobile app.",
+        shortDescription = "SetupBox is a TV application built with Jetpack Compose, featuring a companion mobile app that lets users add TV channels with links and app package names to open specific apps.",
         imageUrl = "/setupboxscreenshots.png",
         logoUrl = "/setupboxLogo.png",
         techStack = listOf("Kotlin", "Compose", "Supabase"),
@@ -66,7 +66,7 @@ enum class ProjectItemsEnums(
 
     QUICKMARK(
         title = "Quickmark",
-        shortDescription = "QuickMark is a simple macOS bookmark manager built with SwiftUI",
+        shortDescription = "QuickMark is a simple macOS bookmark manager built with SwiftUI, utilizing Core Data for local storage of bookmark data. It also features a menu bar icon for quickly adding bookmarks.",
         imageUrl ="/quickmark.png",
         logoUrl = "/quickmark_logo.png",
         techStack = listOf("Swift","Core Data"),
