@@ -185,7 +185,7 @@ var DescriptionStyle = CssStyle {
 
     }
     Breakpoint.LG {
-        Modifier.fontSize(FontSize.Large)
+        Modifier.fontSize(FontSize.Medium)
 
     }
 }

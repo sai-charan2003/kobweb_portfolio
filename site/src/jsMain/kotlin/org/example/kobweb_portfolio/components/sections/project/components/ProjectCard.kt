@@ -106,6 +106,7 @@ fun ProjectCard(
                 SpanText(
                     projectDetails.shortDescription,
                     modifier = DescriptionStyle.toModifier()
+                        .fontWeight(FontWeight.Normal)
                         .textAlign(TextAlign.Justify)
 
                 )
