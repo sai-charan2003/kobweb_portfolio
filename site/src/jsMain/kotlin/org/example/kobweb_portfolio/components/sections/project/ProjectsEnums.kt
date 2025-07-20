@@ -73,5 +73,14 @@ enum class ProjectItemsEnums(
         sourceCodeUrl = "https://github.com/sai-charan2003/Quickmark"
     ),
 
+    STEPSTREAK(
+        title = "StepStreak",
+        shortDescription = "Step Streak is an Android app that keeps you motivated by tracking your daily steps and streaks using data from Health Connect.",
+        imageUrl = "/stepstreak.png",
+        logoUrl = "/stepstreaklogo.png",
+        techStack = listOf("Kotlin", "Compose", "Health Connect"),
+        sourceCodeUrl = "https://github.com/sai-charan2003/Step-Streak"
+    )
+
 
 }

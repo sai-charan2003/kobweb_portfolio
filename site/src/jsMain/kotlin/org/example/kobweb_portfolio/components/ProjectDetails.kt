@@ -18,7 +18,7 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
 import org.example.kobweb_portfolio.CustomColorSchemes
-import org.example.kobweb_portfolio.Styles.ButtonStyle
+import org.example.kobweb_portfolio.styles.ButtonStyle
 import org.example.kobweb_portfolio.components.sections.project.components.Badge
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px

@@ -13,7 +13,7 @@ import com.varabyte.kobweb.silk.components.overlay.Overlay
 import com.varabyte.kobweb.silk.components.overlay.OverlayVars
 import com.varabyte.kobweb.silk.style.animation.toAnimation
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.example.kobweb_portfolio.Styles.SideMenuSlideInAnim
+import org.example.kobweb_portfolio.styles.SideMenuSlideInAnim
 import org.example.kobweb_portfolio.components.sections.header.SideMenuEnums
 import org.example.kobweb_portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*

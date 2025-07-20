@@ -11,7 +11,7 @@ import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.toModifier
-import org.example.kobweb_portfolio.Styles.NavHeaderStyle
+import org.example.kobweb_portfolio.styles.NavHeaderStyle
 import org.example.kobweb_portfolio.components.sections.header.components.*
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Text

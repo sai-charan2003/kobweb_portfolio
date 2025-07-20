@@ -21,18 +21,18 @@ import org.example.kobweb_portfolio.components.sections.skills.Skills
 fun homePage() {
     PageLayout("Home") {
         Row(
-            Modifier.
-            fillMaxWidth()
-                .id("home")
+            Modifier.fillMaxWidth().id("home")
         ) {
+            Box {
                 Column {
-
                     HomeSection()
                     AboutMeSection()
                     ExperienceSection()
                     Skills()
                     ProjectsSection()
                 }
+            }
+
         }
     }
 

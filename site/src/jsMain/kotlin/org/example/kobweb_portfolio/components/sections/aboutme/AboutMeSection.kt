@@ -1,16 +1,14 @@
 package org.example.kobweb_portfolio.components.sections.aboutme
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
-import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
-import org.example.kobweb_portfolio.Styles.AboutMeColumnStyle
-import org.example.kobweb_portfolio.Styles.AboutMeStyle
+import org.example.kobweb_portfolio.styles.AboutMeColumnStyle
+import org.example.kobweb_portfolio.styles.AboutMeStyle
 import org.example.kobweb_portfolio.components.sections.components.SectionHeader
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
@@ -23,9 +21,6 @@ fun AboutMeSection() {
         modifier = AboutMeColumnStyle.toModifier()
             .width(100.percent)
             .padding(leftRight = 10.px, topBottom = 10.px)
-
-
-
             .height(100.vh)
             .id("aboutme"),
         horizontalAlignment = Alignment.CenterHorizontally,

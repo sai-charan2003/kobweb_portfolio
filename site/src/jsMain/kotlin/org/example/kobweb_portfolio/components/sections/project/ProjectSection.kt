@@ -15,7 +15,6 @@ import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 @Composable
 fun ProjectsSection() {
-    val colorMode = ColorMode.current
     val ctx = rememberPageContext()
 
     Column(
@@ -25,7 +24,7 @@ fun ProjectsSection() {
             .id("projects")
     ) {
         SectionHeader(title = "Projects")
-        SimpleGrid(modifier = Modifier.margin(top = 2.cssRem), numColumns = numColumns(base = 1, sm = 2 )) {
+        SimpleGrid(modifier = Modifier.margin(top = 2.cssRem), numColumns = numColumns(base = 1, sm = 2, md = 2, lg = 3 )) {
             ProjectItemsEnums.entries.forEach {
                 ProjectCard(
                     it,
