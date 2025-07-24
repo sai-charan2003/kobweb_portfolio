@@ -1,4 +1,4 @@
-package org.example.kobweb_portfolio.Styles
+package org.example.kobweb_portfolio.styles
 
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.css.Transition
@@ -10,6 +10,7 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.modifiers.cursor
 import com.varabyte.kobweb.compose.ui.modifiers.scale
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.forms.ButtonStyle
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
 import com.varabyte.kobweb.silk.components.layout.HorizontalDividerStyle
@@ -59,8 +60,8 @@ fun initSiteStyles(ctx: InitSilkContext) {
 val HeadlineTextStyle = CssStyle.base {
     Modifier
         .fontSize(3.cssRem)
-        .textAlign(TextAlign.Start)
-        .lineHeight(1.2) //1.5x doesn't look as good on very large text
+        .fontWeight(FontWeight.Bolder)
+        .lineHeight(1.2)
 }
 
 val SubheadlineTextStyle = CssStyle.base {
@@ -87,8 +88,8 @@ val NavHeaderStyle = CssStyle.base( extraModifier = { SmoothColorStyle.toModifie
         .fillMaxWidth()
         .padding(1.cssRem)
         .fontSize(1.25.cssRem)
-        .position(Position.Fixed)
         .top(0.percent)
+        .position(Position.Sticky)
 
         .backgroundColor(colorMode.toPalette().background.toRgb().copyf(alpha = 0.65f))
         .backdropFilter(saturate(180.percent), blur(5.px))

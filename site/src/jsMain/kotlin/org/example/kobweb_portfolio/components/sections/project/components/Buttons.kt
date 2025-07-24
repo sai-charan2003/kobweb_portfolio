@@ -8,7 +8,7 @@ import com.varabyte.kobweb.silk.components.icons.fa.FaArrowUpRightFromSquare
 import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.style.toModifier
-import org.example.kobweb_portfolio.Styles.ElevationButtonStyle
+import org.example.kobweb_portfolio.styles.ElevationButtonStyle
 import org.jetbrains.compose.web.css.px
 
 @Composable

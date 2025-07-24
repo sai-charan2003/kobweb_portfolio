@@ -26,6 +26,7 @@ import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
 import org.example.kobweb_portfolio.toSitePalette
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
+import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.filter
 import org.jetbrains.compose.web.css.px
 
@@ -33,12 +34,13 @@ val FooterStyle = CssStyle.base {
     Modifier
         .backgroundColor(colorMode.toSitePalette().nearBackground)
         .padding(topBottom = 1.5.cssRem, leftRight = 10.percent)
+        .bottom(0.px)
 }
 
-@OptIn(ExperimentalComposeWebApi::class)
+
 @Composable
 fun Footer(modifier: Modifier = Modifier) {
-    Box(FooterStyle.toModifier().then(modifier).id("contact"), contentAlignment = Alignment.Center) {
+    Box(FooterStyle.toModifier().then(modifier).id("contact"), contentAlignment = Alignment.BottomEnd) {
         Column (modifier=Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally){
             val ctx = rememberPageContext()
 

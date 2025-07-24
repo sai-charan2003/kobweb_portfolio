@@ -9,20 +9,14 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.PageContext
-import com.varabyte.kobweb.silk.components.forms.Button
-import com.varabyte.kobweb.silk.components.forms.ButtonSize
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.layout.SimpleGrid
-import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
-import org.example.kobweb_portfolio.CustomColorSchemes
-import org.example.kobweb_portfolio.Styles.DescriptionStyle
-import org.example.kobweb_portfolio.Styles.ProjectImageStyle
+import org.example.kobweb_portfolio.styles.DescriptionStyle
+import org.example.kobweb_portfolio.styles.ProjectImageStyle
 import org.example.kobweb_portfolio.components.sections.project.ProjectItemsEnums
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun ProjectCard(
@@ -43,10 +37,9 @@ fun ProjectCard(
             Image(
                 projectDetails.imageUrl,
                 modifier = ProjectImageStyle.toModifier()
-                    .fillMaxWidth()
+                    .fillMaxSize()
+                    .borderRadius(topLeft = 10.px, topRight = 10.px),
 
-                    .objectFit(ObjectFit.Cover)
-                    .borderRadius(topLeft = 10.px, topRight = 10.px)
             )
 
 

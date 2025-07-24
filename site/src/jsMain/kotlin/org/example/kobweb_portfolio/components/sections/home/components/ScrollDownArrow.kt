@@ -10,7 +10,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.PageContext
 import com.varabyte.kobweb.silk.components.icons.fa.FaAngleDown
 import com.varabyte.kobweb.silk.style.animation.toAnimation
-import org.example.kobweb_portfolio.Styles.BounceKeyframes
+import org.example.kobweb_portfolio.styles.BounceKeyframes
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.s
 

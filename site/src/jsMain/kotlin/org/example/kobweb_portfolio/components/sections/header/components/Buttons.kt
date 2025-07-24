@@ -17,7 +17,7 @@ import com.varabyte.kobweb.silk.components.icons.fa.IconCategory
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.example.kobweb_portfolio.CustomColorSchemes
-import org.example.kobweb_portfolio.Styles.ElevationButtonStyle
+import org.example.kobweb_portfolio.styles.ElevationButtonStyle
 import org.example.kobweb_portfolio.components.widgets.IconButton
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Text

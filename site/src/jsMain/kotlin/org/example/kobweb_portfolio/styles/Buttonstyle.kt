@@ -1,4 +1,4 @@
-package org.example.kobweb_portfolio.Styles
+package org.example.kobweb_portfolio.styles
 
 
 import com.varabyte.kobweb.compose.css.Transition

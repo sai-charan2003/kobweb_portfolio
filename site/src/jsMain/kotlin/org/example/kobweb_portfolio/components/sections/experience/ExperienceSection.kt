@@ -2,7 +2,6 @@ package org.example.kobweb_portfolio.components.sections.experience
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -16,7 +15,7 @@ import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
-import org.example.kobweb_portfolio.Styles.*
+import org.example.kobweb_portfolio.styles.*
 import org.example.kobweb_portfolio.components.sections.components.SectionHeader
 import org.example.kobweb_portfolio.components.sections.project.components.Badge
 import org.jetbrains.compose.web.css.*
@@ -82,7 +81,7 @@ fun ExperienceSection() {
                                 modifier = Modifier.margin(right = 5.px)
                             )
                             SpanText(
-                                text = "March 2024 - Present",
+                                text = "March 2024 - June 2025",
                                 modifier = CompanyStyle.toModifier()
                                     .fontWeight(FontWeight.Normal)
                             )
@@ -94,10 +93,10 @@ fun ExperienceSection() {
                             "This included improving application stability by addressing crash-related issues, " +
                             "optimizing offline synchronization mechanisms, and developing new features such as geofencing.",
                     modifier = WorkStyle.toModifier()
-                        .margin(top = 10.px) // Reduce margin for mobile
+                        .margin(top = 10.px)
                         .fontWeight(FontWeight.Medium)
-                        .color(Color.dimgray)
-                        .fontSize(14.px) // Smaller font size for readability
+                        .color(Color.gray)
+                        .fontSize(14.px)
                 )
                 SimpleGrid(
                     numColumns = numColumns(base = 2, sm = 2, lg = 4),
